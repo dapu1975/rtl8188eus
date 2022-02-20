@@ -12,6 +12,9 @@ sudo apt-get -y install dkms build-essential git
 # Install header
 sudo apt install raspberry-linux-headers
 
+# Blacklist old driver
+echo 'blacklist r8188eu'|sudo tee -a '/etc/modprobe.d/realtek.conf'
+
 # Go install the driver 
 mkdir ~/DriverBuild
 cd ~/DriverBuild
