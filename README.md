@@ -1,3 +1,26 @@
+
+HELP: https://askubuntu.com/questions/1170202/how-to-install-rtl8188eus-driver-on-ubuntu-18-04
+
+short:
+```
+# Prepare
+sudo apt update
+sudo apt-get install -f
+sudo apt-get dist-upgrade
+sudo apt-get -y install dkms build-essential git
+
+# Go install the driver 
+mkdir ~/DriverBuild
+cd ~/DriverBuild
+git clone https://github.com/lwfinger/rtl8188eu.git
+sudo dkms add ./rtl8188eu
+sudo dkms build 8188eu/1.0
+sudo dkms install 8188eu/1.0
+reboot
+```
+***
+
+
 Like https://github.com/cccooo/rtl8812au-centos-7.6, forked from aircrack-ng/rtl8188eus and modified for CentOS 7.9
 as CentOS Kernel 3.10 contains many code from 4.x
 
