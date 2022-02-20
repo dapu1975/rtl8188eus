@@ -9,13 +9,16 @@ sudo apt-get install -f
 sudo apt-get dist-upgrade
 sudo apt-get -y install dkms build-essential git
 
+# Install header
+sudo apt install raspberry-linux-headers
+
 # Go install the driver 
 mkdir ~/DriverBuild
 cd ~/DriverBuild
-git clone https://github.com/lwfinger/rtl8188eu.git
-sudo dkms add ./rtl8188eu
-sudo dkms build 8188eu/1.0
-sudo dkms install 8188eu/1.0
+git clone https://github.com/dapu1975/rtl8188eu.git
+sudo dkms add ./rtl8188eus
+sudo dkms build realtek-rtl8188eus/5.3.9~20200316
+sudo dkms install realtek-rtl8188eus/5.3.9~20200316
 reboot
 ```
 ***
